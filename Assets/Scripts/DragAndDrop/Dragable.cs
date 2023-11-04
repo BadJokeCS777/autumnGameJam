@@ -7,6 +7,7 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField] private Transform _draggingParent;
     [SerializeField] private CanvasGroup _canvasGroup;
 
+    private Vector3 _position;
     private Transform _transform;
     private Transform _parent;
 
@@ -17,6 +18,7 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _position = _transform.position;
         _parent = _transform.parent;
         _transform.SetParent(_draggingParent);
         
@@ -32,12 +34,7 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnEndDrag(PointerEventData eventData)
     {
         _transform.SetParent(_parent);
-        _transform.localPosition = Vector3.zero;
+        _transform.position = _position;
         _canvasGroup.blocksRaycasts = true;
-    }
-
-    public void SetNewParent(Transform parent)
-    {
-        _parent = parent;
     }
 }
