@@ -123,6 +123,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &54621991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54621994}
+  - component: {fileID: 54621993}
+  - component: {fileID: 54621992}
+  m_Layer: 0
+  m_Name: DialoguePlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &54621992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54621991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44944743a6b34e44b20dd9e0e3f7f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogTextZone: {fileID: 1034193607}
+  _elements:
+  - _dialogMessage: "\u0412\u0410\u0440"
+    _thought: 
+    _thoughtText: {fileID: 0}
+--- !u!114 &54621993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54621991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f91c4ec4178d9e4ba5136b8fc55868e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogPlay: {fileID: 54621992}
+--- !u!4 &54621994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54621991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1196.1786, y: 538.4671, z: -11.058481}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104139672
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c3ab35597767845a96289f2a977027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogPlay: {fileID: 54621992}
   _dropPlaces:
   - {fileID: 364404644}
   - {fileID: 104139676}
@@ -1139,6 +1203,7 @@ GameObject:
   - component: {fileID: 1034193604}
   - component: {fileID: 1034193606}
   - component: {fileID: 1034193605}
+  - component: {fileID: 1034193607}
   m_Layer: 5
   m_Name: SchoolarshipDialogue
   m_TagString: Untagged
@@ -1204,6 +1269,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034193603}
   m_CullTransparentMesh: 1
+--- !u!114 &1034193607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034193603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a866c813364a45ab9781ed1997755f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1413136491}
+  _delayByCharacter: 0
 --- !u!1 &1170828481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1543,7 @@ GameObject:
   - component: {fileID: 1260566110}
   - component: {fileID: 1260566113}
   - component: {fileID: 1260566112}
+  - component: {fileID: 1260566114}
   m_Layer: 5
   m_Name: SchoolchildSecondThoughts
   m_TagString: Untagged
@@ -1555,6 +1635,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1260566114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260566108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a866c813364a45ab9781ed1997755f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 601037997}
+  _delayByCharacter: 0
 --- !u!1 &1336207290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1662,7 @@ GameObject:
   - component: {fileID: 1336207292}
   - component: {fileID: 1336207295}
   - component: {fileID: 1336207294}
+  - component: {fileID: 1336207296}
   m_Layer: 5
   m_Name: SchoolchildFirstThoughts
   m_TagString: Untagged
@@ -1659,6 +1754,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1336207296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336207290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a866c813364a45ab9781ed1997755f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1487460390}
+  _delayByCharacter: 0
 --- !u!1 &1358063531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,3 +2704,4 @@ SceneRoots:
   - {fileID: 315586318}
   - {fileID: 1901939471}
   - {fileID: 266533621}
+  - {fileID: 54621994}
