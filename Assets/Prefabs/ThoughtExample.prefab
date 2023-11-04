@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2829257655533964838}
   - component: {fileID: 7096754077857475086}
   - component: {fileID: 4831946003590782138}
+  - component: {fileID: 7595107760821916165}
   m_Layer: 5
   m_Name: ThoughtExample
   m_TagString: Untagged
@@ -140,6 +141,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _draggingParent: {fileID: 0}
   _canvasGroup: {fileID: 7096754077857475086}
+--- !u!114 &7595107760821916165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590067336658295973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a866c813364a45ab9781ed1997755f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 5598005452975622287}
+  _delayByCharacter: 0.1
 --- !u!1 &9064833756683435960
 GameObject:
   m_ObjectHideFlags: 0

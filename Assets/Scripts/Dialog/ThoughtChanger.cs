@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ThoughtChanger : MonoBehaviour
 {
+    [SerializeField] private DialogPlay _dialogPlay;
+    
     [SerializeField] private DropPlace[] _dropPlaces;
     [SerializeField] private ThoughtChange _rodomir;
     [SerializeField] private ThoughtChange _agaphia;
@@ -17,10 +19,10 @@ public class ThoughtChanger : MonoBehaviour
 
     private void DropPlaceOnDropped()
     {
-        Debug.Log("dropped");
-        
         foreach (DropPlace dropPlace in _dropPlaces)
             dropPlace.Dropped -= DropPlaceOnDropped;
+        
+        _dialogPlay.Stop();
         
         _rodomir.Change();
         _agaphia.Change();
