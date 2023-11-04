@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c3ab35597767845a96289f2a977027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogPlay: {fileID: 480470325}
   _dropPlaces:
   - {fileID: 1338950404}
   - {fileID: 238096309}
@@ -367,8 +368,9 @@ RectTransform:
   - {fileID: 464034915}
   - {fileID: 892199377}
   - {fileID: 604429450}
-  - {fileID: 224722764}
   - {fileID: 1455946262}
+  - {fileID: 224722764}
+  - {fileID: 480470324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -413,6 +415,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &480470323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480470324}
+  - component: {fileID: 480470326}
+  - component: {fileID: 480470325}
+  m_Layer: 0
+  m_Name: DialogPlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480470324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480470323}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 441420657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480470325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480470323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44944743a6b34e44b20dd9e0e3f7f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogTextZone: {fileID: 1455946263}
+  _elements:
+  - _dialogMessage: "\u041F\u0440\u0438\u0432\u0435, \u0410\u0433\u0430\u0444\u044C\u044F!"
+    _thought: 
+    _thoughtText: {fileID: 0}
+  - _dialogMessage: 
+    _thought: "\u0412\u043E\u0442 \u044D\u0442\u043E \u0442\u0438\u0442\u044C\u043A\u0438!"
+    _thoughtText: {fileID: 0}
+  - _dialogMessage: "\u041F\u0440\u0438\u0432\u0435, \u0420\u043E\u0434\u043E\u043C\u0438\u0440!"
+    _thought: 
+    _thoughtText: {fileID: 0}
+--- !u!114 &480470326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480470323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f91c4ec4178d9e4ba5136b8fc55868e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogPlay: {fileID: 480470325}
 --- !u!1001 &604429449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1024,7 +1095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Olde Text
+  m_text: Old Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1110,6 +1181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455946262}
+  - component: {fileID: 1455946263}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -1138,6 +1210,20 @@ RectTransform:
   m_AnchoredPosition: {x: -480, y: 135}
   m_SizeDelta: {x: 960, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1455946263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455946261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a866c813364a45ab9781ed1997755f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1431785473}
+  _delayByCharacter: 0.1
 --- !u!1 &1598582014
 GameObject:
   m_ObjectHideFlags: 0
