@@ -13,6 +13,9 @@ public class DialogPlay : MonoBehaviour
         if (_active == false)
             return;
 
+        if (_index >= _elements.Length - 1)
+            return;
+        
         if (_elements[_index].IsReady == false)
             return;
         

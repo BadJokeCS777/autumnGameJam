@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +11,9 @@ public class ThoughtChanger : MonoBehaviour
     [SerializeField] private ThoughtChange _agaphia;
     [SerializeField] private TMP_Text _dialogText;
     [SerializeField, TextArea] private string _newDialogText;
- 
+
+    public event Action ThoughtChanged;
+    
     private void Start()
     {
         foreach (DropPlace dropPlace in _dropPlaces)
@@ -28,6 +31,8 @@ public class ThoughtChanger : MonoBehaviour
         _agaphia.Change();
 
         _dialogText.text = _newDialogText;
+        
+        ThoughtChanged?.Invoke();
     }
     
     #if UNITY_EDITOR

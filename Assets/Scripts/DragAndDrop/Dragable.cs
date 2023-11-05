@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,5 +35,10 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         _transform.SetParent(_parent);
         _transform.position = _position;
         _canvasGroup.blocksRaycasts = true;
+
+        if ( EventSystem.current.TryGetComponentInRaycasts(eventData, out DropPlace dropPlace))
+        {
+            dropPlace.OnDrop(eventData);
+        }
     }
 }
