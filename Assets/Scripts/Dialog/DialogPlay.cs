@@ -42,6 +42,9 @@ public class DialogPlay : MonoBehaviour
 
     private void PlayDialogElement()
     {
+        if (_elements.Length == 0)
+            return;
+        
         _elements[++_index].SetTexts();
 
         if (_index >= _elements.Length - 1)
