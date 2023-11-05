@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class ThoughtChanger : MonoBehaviour
@@ -10,11 +11,13 @@ public class ThoughtChanger : MonoBehaviour
     [SerializeField] private ThoughtChange _agaphia;
     [SerializeField] private TextZone _dialogText;
     [SerializeField, TextArea] private string _newDialogText1;
-    [SerializeField, Min(0f)] private float _changeDelay = 2f;
     [SerializeField, Min(0f)] private float _dialogReplaceInterval = 0.5f;
-    [SerializeField, Min(0f)] private float _ballsKickDelay = 0.5f;
+    [SerializeField, Min(0f)] private float _thoughtChangeDelay = 0.5f;
+    [SerializeField, Min(0f)] private float _dialogChangeDelay = 2f;
     [SerializeField] private Animator _girlAnimator;
     [SerializeField] private Animator _boyAnimator;
+    [SerializeField, Min(0f)] private float _ballsFadeDuration = 1f;
+    [SerializeField] private CanvasGroup _girlBubble;
 
     public event Action ThoughtChanged;
     
@@ -42,20 +45,22 @@ public class ThoughtChanger : MonoBehaviour
         _agaphia.Reset();
         yield return new WaitForSeconds(_dialogReplaceInterval);
         _dialogText.SetText("");
-        yield return new WaitForSeconds(_dialogReplaceInterval);
+        yield return new WaitForSeconds(_thoughtChangeDelay);
         _agaphia.Change();
-        yield return new WaitForSeconds(_changeDelay);
+        yield return new WaitForSeconds(_dialogChangeDelay);
         _dialogText.SetText(_newDialogText1);
-        yield return new WaitForSeconds(_changeDelay);
+        yield return new WaitForSeconds(_dialogChangeDelay);
 
-        _girlAnimator.SetTrigger("BallsKick");
-        _boyAnimator.SetTrigger("BallsKick");
-        yield return new WaitForSeconds(_ballsKickDelay);
-        
+        _girlBubble.DOFade(0f, _ballsFadeDuration);
         _rodomir.Reset();
-        yield return new WaitForSeconds(_dialogReplaceInterval);
+
+        yield return new WaitForSeconds(_ballsFadeDuration);
+        
+        _girlAnimator.SetTrigger("BallsKick");
+        yield return new WaitForSeconds(1f);
+        _boyAnimator.SetTrigger("BallsKick");
         _rodomir.Change();
-        yield return new WaitForSeconds(_changeDelay);
+        yield return new WaitForSeconds(_dialogChangeDelay);
         
         ThoughtChanged?.Invoke();
     }
